@@ -10,16 +10,22 @@
 
 </head>
 
+<script src="script.js"></script>
+
 <body>
-    <form name="registration_form" method="post" action="backend.php">
-        <p>Email:</p>
-        <input name="Email" type="text"></br>
-        <p>Username: </p>
-        <input name="Username" type="text"></br>
-        <p>Password: </p>
-        <input name="Password" type="password"></br>
+    <form name="registration_form" method="post" action="backend.php" onsubmit="return validateForm()">
+        <label for="Email">Email:</label>
+        <input name="Email" type="text" placeholder="Your Email"></br>
+        <label for="Userid">Userid:</label>
+        <input name="Userid" type="text" placeholder="Your Userid"></br>
+        <label for="Username">Username:</label>
+        <input name="Username" type="text" placeholder="Your Username"></br>
+        <label for="Password">Password:</label>
+        <input name="Password" type="password" placeholder="Your Password"></br>
         <input type="submit" value="Register">
     </form>
 </body>
+
+
 
 </html>
