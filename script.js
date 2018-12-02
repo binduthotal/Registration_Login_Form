@@ -8,18 +8,25 @@ function validateForm() {
         alert("Email Field is incorrect. Please Enter a valid Email address !");
         return false;
     }
-    else
-        document.forms["registration_form"]["Email"].value = "";
     if (username_val == "") {
         alert("Username Field cannot be empty !");
         return false;
     }
-    else
-        document.forms["registration_form"]["Username"].value = "";
     if (password_val == "") {
         alert("Password Field cannot be empty !");
         return false;
     }
-    else
-        document.forms["registration_form"]["Password"].value = "";
+}
+
+function validateLogin() {
+    var username_val = document.forms["login_form"]["Username"].value;
+    var password_val = document.forms["login_form"]["Password"].value;
+    if (username_val == "") {
+        alert("Username Field cannot be empty !");
+        return false;
+    }
+    if (password_val == "") {
+        alert("Password Field cannot be empty !");
+        return false;
+    }
 }
