@@ -18,15 +18,3 @@ function validateForm() {
     }
 }
 
-function validateLogin() {
-    var username_val = document.forms["login_form"]["Username"].value;
-    var password_val = document.forms["login_form"]["Password"].value;
-    if (username_val == "") {
-        alert("Username Field cannot be empty !");
-        return false;
-    }
-    if (password_val == "") {
-        alert("Password Field cannot be empty !");
-        return false;
-    }
-}

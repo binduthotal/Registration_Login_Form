@@ -7,10 +7,25 @@
     <meta name="author" content="Amr Elzawawy">
     <meta name="keywords" content="HTML, CSS, XML, JavaScript,PHP,Learning,Database">
 </head>
-<script src="script.js"></script>
+<script>
+function validateLogin() 
+{
+    var username_val = document.forms["login_form"]["Username"].value;
+    var password_val = document.forms["login_form"]["Password"].value;
+    if (username_val == "") {
+        alert("Username Field cannot be empty !");
+        return false;
+    }
+    if (password_val == "") 
+    {
+        alert("Password Field cannot be empty !");
+        return false;
+    }
+}
+</script>
 
 <body>
-    <form name="login_form" method="post" action="backend.php" onsubmit="validateLogin()">
+    <form name="login_form" method="post" action="backend.php" onsubmit="return validateLogin()">
         <label for="Username">Username:</label>
         <input name="Username" type="text" placeholder="Your Username"></br>
         <label for="Password">Password:</label>
