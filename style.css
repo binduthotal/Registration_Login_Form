@@ -1,14 +1,27 @@
+@font-face
+{
+    font-family:My Font; 
+    src: url(fonts/Titillium-Bold.otf)
+}
+@font-face
+{
+    font-family:My Font Light; 
+    src: url(fonts/Titillium-Light.otf)
+}
+ 
 body 
 {
     background-color: aliceblue;
-	margin : auto;
+    margin : auto;
+    font-family: "My Font";
 }
 
 form
 {
     position: fixed;
-    top:30%;
-    left:40%;
+    margin: auto;
+    top:20%;
+    left:43%;
 }
 input[type=text], input[type=password]
 {
@@ -33,8 +46,11 @@ input[type=submit]
     border: 0.5px solid #000000;
     border-radius: 4px;
     cursor: pointer;
+    font-family: "My Font Light";
 }
 input[type=submit]:hover {
     background-color: #45a049;
 }
-
+a {
+    font-family: "My Font Light";
+}

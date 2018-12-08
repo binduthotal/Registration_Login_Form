@@ -36,9 +36,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if($assoc_check == NULL)
         {	
 	        $result = mysqli_query($db,$user_insert_sql);
-	        if( $result == TRUE ) 
-		        echo 'Welcome '.$username_val;
+            if( $result == TRUE ) 
+            {
+                $_SESSION['username'] = $username_val;
+                $_SESSION['success'] = "You are now logged in";
+                header('Location: home.php');
+            }   
         }
+        else
+        {
+            echo 'An account with the same Username/Email or Password already exists !';
+        } 
     }
     else if($_POST['submit'] == "Login")
     {
@@ -50,9 +58,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = mysqli_query($db, $user_check_sql);
         if (mysqli_num_rows($result) == 1) 
         {
-            $_SESSION['username'] = $username;
+            $user_alter_date_sql = "UPDATE User SET last_login_date='$date_val' WHERE username ='$username_val'";
+            mysqli_query($db,$user_alter_date_sql);
+            $_SESSION['username'] = $username_val;
             $_SESSION['success'] = "You are now logged in";
-            header('Location: index.html');
+            header('Location: home.php');
         }
         else 
         {
